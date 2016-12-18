@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference
+        android:key="recruiters"
+        android:title="Recruiters?"
+        android:summary="Do you want to include results from recruitment agencies." />
+    <CheckBoxPreference
+        android:key="rates"
+        android:title="Rates Only?"
+        android:summary="Only include results that list their rates"/>
+
+</PreferenceScreen>

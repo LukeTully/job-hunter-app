@@ -1,0 +1,60 @@
+
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'android-apt'
+android {
+    compileOptions {
+
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    compileSdkVersion 24
+    buildToolsVersion "24.0.0"
+    defaultConfig {
+
+        applicationId "lukedev.hunter"
+        minSdkVersion 10
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dexOptions {
+        incremental false
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:24.+'
+    compile 'com.android.support:design:24.+'
+    compile 'com.android.support:support-v4:24.+'
+    compile 'com.android.support:recyclerview-v7:24.+'
+    //RxAndroid
+    //Retrofit
+    compile 'com.github.satyan:sugar:1.5'
+    compile 'io.reactivex:rxjava:1.1.5'
+    compile 'io.reactivex:rxandroid:1.2.0'
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
+    compile 'com.jakewharton:butterknife:8.1.0'
+    apt 'com.jakewharton:butterknife-compiler:8.1.0'
+    compile('com.squareup.retrofit2:converter-simplexml:2.0.2') {
+        exclude group: 'stax', module: 'stax-api'
+        exclude group: 'stax', module: 'stax'
+        exclude group: 'xpp3', module: 'xpp3'
+    }
+    compile 'org.jsoup:jsoup:1.9.2'
+    compile files('libs/boilerpipe.jar')
+    //    compile 'me.zhanghai.android.materialprogressbar:library:1.1.7'
+    compile 'com.googlecode.juniversalchardet:juniversalchardet:1.0.3'
+    compile 'org.apache.commons:commons-lang3:3.5'
+}

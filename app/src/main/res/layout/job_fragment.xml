@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/job_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Web Developer"
+            android:textColor="@color/colorLightGrey"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/job_employer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="Web Developer"
+            android:textColor="@color/colorBlack"
+            android:textSize="32dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/seperator" />
+
+        <TextView
+            android:id="@+id/job_salary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-black"
+            android:text="$18.00 / HR"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Terms"
+            android:textColor="@color/colorLightGrey"
+            android:textSize="16dp"
+            android:id="@+id/label_for_job_terms"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/job_terms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@color/colorBlack"
+            android:textSize="24sp"
+            tools:text="Full-Time"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Start Date"
+            android:textColor="@color/colorLightGrey"
+            android:textSize="16dp"
+            android:id="@+id/label_for_job_availability"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/job_availability"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@color/colorBlack"
+            android:textSize="24sp"
+            tools:text="As soon as possible"
+            android:visibility="gone"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/seperator" /><!--<TextView--><!--android:id="@+id/job_location"--><!--android:layout_width="match_parent"--><!--android:layout_height="wrap_content"--><!--android:fontFamily="sans-serif-medium"--><!--android:textSize="12sp"--><!--android:textColor="@color/colorPrimary"--><!--tools:text="Web Developers" />--><!--<TextView--><!--android:id="@+id/job_posted_date"--><!--android:layout_width="match_parent"--><!--android:layout_height="wrap_content"--><!--android:fontFamily="sans-serif-medium"--><!--android:textSize="24sp"--><!--android:textColor="@color/colorPrimary"--><!--tools:text="Web Developers" />--><!---->
+
+
+            <TextView
+                android:id="@+id/job_external_page_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:fontFamily="sans-serif-regular"
+                android:textColor="@color/colorBlack"
+                android:layout_marginTop="16dp" />
+
+
+        <!--<TextView--><!--android:id="@+id/job_summary"--><!--android:layout_width="match_parent"--><!--android:layout_height="wrap_content"--><!--android:textColor="#000"/>-->
+
+
+    </LinearLayout>
+</ScrollView>

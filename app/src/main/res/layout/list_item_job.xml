@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+        <TextView
+            android:id="@+id/list_item_job_title_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            tools:text="Job Title"
+            android:textSize="10dp"
+            android:fontFamily="sans-serif-thin" />
+        <TextView
+            android:id="@+id/list_item_job_summary_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            tools:text="Job Summary"
+            android:textSize="20dp"
+            android:layout_alignParentTop="false"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentStart="false"
+            android:layout_marginTop="4dp"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/colorPrimary"
+            android:layout_below="@+id/list_item_job_title_text_view" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/list_item_job_salary_text_view"
+            android:layout_below="@+id/list_item_job_summary_text_view"
+            android:layout_marginTop="4dp" />
+
+        <!--<TextView-->
+            <!--android:id="@+id/list_item_job_date_text_view"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@id/list_item_job_title_text_view"-->
+            <!--android:padding="4dp"-->
+            <!--tools:text="Job Date"/>-->
+        <!--<TextView-->
+            <!--android:id="@+id/list_item_job_salary_text_view"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_toRightOf="@id/list_item_job_date_text_view"-->
+            <!--android:layout_below="@id/list_item_job_title_text_view"-->
+            <!--android:padding="4dp"-->
+            <!--tools:text="Crime Date"/>-->
+
+        <!--<Button-->
+            <!--style="?android:attr/buttonStyleSmall"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@string/delete_label"-->
+            <!--android:id="@+id/list_item_crime_delete_button"-->
+            <!--android:layout_alignBottom="@+id/list_item_crime_date_text_view"-->
+            <!--android:layout_alignRight="@+id/list_item_crime_title_text_view"-->
+            <!--android:layout_alignEnd="@+id/list_item_crime_title_text_view"/>-->
+
+</RelativeLayout>

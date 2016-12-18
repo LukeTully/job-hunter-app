@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="entries_list_preference">
+        <item>Bacon</item>
+        <item>Bacon 1</item>
+        <item>Bacon 2</item>
+    </array>
+    <array name="entryvalues_list_preference">
+        <item>Toast 1</item>
+        <item>Toast 2</item>
+        <item>Toast 3</item>
+    </array>
+</resources>
