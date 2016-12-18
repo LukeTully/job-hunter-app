@@ -364,11 +364,18 @@ public class JobFragment extends Fragment {
         mExternalContent.setText("Loading Content");
 
         // Construct a Retrofit builder to describe the HTTP request for the external job website
-        Retrofit.Builder retroFitBuilder = new Retrofit.Builder();
-        retroFitBuilder.addCallAdapterFactory(RxJavaCallAdapterFactory.create());
-        retroFitBuilder.addConverterFactory(WorkopolisAdapter.FACTORY);
-        retroFitBuilder.baseUrl("http://www.jobbank.gc.ca/");
-        Retrofit retrofit = retroFitBuilder.build();
+        JobBankHttpApi jobBankHttpApi = new JobBankHttpApi();
+        jobBankHttpApi.requestExternalJob(url).enqueue(new Callback<JobPage>() {
+            @Override
+            public void onResponse(Call<JobPage> call, Response<JobPage> response) {
+            }
+
+            @Override
+            public void onFailure(Call<JobPage> call, Throwable t) {
+
+            }
+        });
+
 
 
 //
