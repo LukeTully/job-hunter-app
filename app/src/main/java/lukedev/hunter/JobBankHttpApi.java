@@ -88,5 +88,15 @@ public class JobBankHttpApi {
         return call;
     }
 
+    public Call<JobPage> requestExternalJob(HttpUrl url) {
+        Retrofit retrofit = ApiClient.getClient();
+
+        ExternalService service = retrofit.create(ExternalService.class);
+
+        Call<JobPage> call = service.get(url);
+
+        return call;
+    }
+
 
 }
