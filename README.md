@@ -7,6 +7,7 @@ To create a minimal app that acted as a better interface to the website, perhaps
 
 ## Constraints
 1. No server
+
 I could have more easily developed a web scraper using any number of server side technologies. This would have certain advantages, such as being able to centrally cache results, reduce the memory footprint of the app, and reduce the network usage for the individual. I'd also be able to centrally manage the scraping code in the case where the source web page changes and breaks the code rather than having to push out updates.
 The disadvantage was that this would have created a central point of failure and introduce new problems. For example, I'd have to maintain a sizable list of proxies—at a minimum—to avoid standard bot blocking methods.
 2. Needed to work on older devices just on principle.
