@@ -4,34 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.View.OnKeyListener;
 import android.widget.EditText;
-
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import lukedev.hunter.models.Job;
-import lukedev.hunter.models.JobList;
-import lukedev.hunter.models.JobRecord;
-import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
-import retrofit2.converter.simplexml.SimpleXmlConverterFactory;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
-import rx.Observable;
-
-import static lukedev.hunter.R.id.editText;
-import static lukedev.hunter.R.id.edit_query;
-import static lukedev.hunter.R.id.fab;
 
 public class MainActivity extends AppCompatActivity {
 	@BindView(R.id.editText)
@@ -47,23 +25,18 @@ public class MainActivity extends AppCompatActivity {
 //		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 		ButterKnife.bind(this);
 		NetworkUtils networkUtils = new NetworkUtils(this);
-		fab.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				networkUtils.submitSearch(editText.getText().toString(), new NetworkUtils.OnSearchCompletedListener() {
-					@Override
-					public void searchCompleted(String searchString, String searchUID) {
-						Intent intent = new Intent(getApplicationContext(), JobListActivity.class);
-						intent.putExtra("SEARCH_QUERY", editText.getText().toString());
-						intent.putExtra("SEARCH_QUERY_UID", searchUID.toString());
-						SearchHolder.getInstance().setLastSearchQuery(editText.getText().toString());
-						SearchHolder.getInstance().setLastSearchUID(searchUID.toString());
+		fab.setOnClickListener(v -> networkUtils.submitSearch(editText.getText().toString(), new NetworkUtils.OnSearchCompletedListener() {
+            @Override
+            public void searchCompleted(String searchString, String searchUID) {
+                Intent intent = new Intent(getApplicationContext(), JobListActivity.class);
+                intent.putExtra("SEARCH_QUERY", editText.getText().toString());
+                intent.putExtra("SEARCH_QUERY_UID", searchUID.toString());
+                SearchHolder.getInstance().setLastSearchQuery(editText.getText().toString());
+                SearchHolder.getInstance().setLastSearchUID(searchUID.toString());
 
-						startActivity(intent);
-					}
-				});
-			}
-		});
+                startActivity(intent);
+            }
+        }));
 		editText.setOnKeyListener(new View.OnKeyListener() {
 			@Override
 			public boolean onKey(View view, int i, KeyEvent keyEvent) {

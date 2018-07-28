@@ -25,7 +25,7 @@ import rx.Observable;
 
 public class JobBankHttpApi {
 
-    public static final String API_BASE_URL = "https://jobbank.gc.ca";
+    public static final String API_BASE_URL = "http://jobbank.gc.ca";
 
     /* Service responsible for constructing queries to the jobbank website*/
     public interface JobBankService {
@@ -64,7 +64,7 @@ public class JobBankHttpApi {
     }
 
     public Call<JobBankResponse> requestJobList(String searchString) {
-        Retrofit retrofit = ApiClient.getClient();
+        Retrofit retrofit = ApiClient.getClient(ApiClient.JOBBANKURL);
 
         // Service setup
         JobBankService service = retrofit.create(JobBankService.class);
@@ -79,17 +79,17 @@ public class JobBankHttpApi {
 
     public Call<JobPage> requestJob(String jobString) {
 
-        Retrofit retrofit = ApiClient.getClient();
+        Retrofit retrofit = ApiClient.getClient(ApiClient.JOBBANKURL);
 
         ExternalService service = retrofit.create(ExternalService.class);
 
-        Call<JobPage> call = service.get(HttpUrl.parse(ApiClient.BASE_URL + jobString));
+        Call<JobPage> call = service.get(HttpUrl.parse(ApiClient.JOBBANKURL + jobString));
 
         return call;
     }
 
     public Call<JobPage> requestExternalJob(HttpUrl url) {
-        Retrofit retrofit = ApiClient.getClient();
+        Retrofit retrofit = ApiClient.getClient(url);
 
         ExternalService service = retrofit.create(ExternalService.class);
 

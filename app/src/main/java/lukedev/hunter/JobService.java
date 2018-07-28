@@ -10,7 +10,7 @@ import rx.Observable;
  */
 public interface JobService {
 //	@GET("jobSearchRSS.xml")
-	@GET("jobSearchRSS.do?sort=M&button.submit=Search")
+	@GET("jobsearch/feed/jobSearchRSSfeed?sort=M&button.submit=Search")
 	Observable<JobList> getJobList(@Query("searchstring") String searchString);
 
 }

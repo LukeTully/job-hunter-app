@@ -13,18 +13,17 @@ import java.util.regex.Pattern;
 import lukedev.hunter.models.JobPage;
 import okhttp3.ResponseBody;
 import retrofit2.Converter;
-import retrofit2.Response;
 import retrofit2.Retrofit;
 
 /**
  * Created by Luke on 9-1-2016.
  */
-class JobPageAdapter implements Converter<ResponseBody, JobPage> {
-    static final Converter.Factory FACTORY = new Converter.Factory() {
+class QuebecJobPageAdapter implements Converter<ResponseBody, JobPage> {
+    static final Factory FACTORY = new Factory() {
         @Override
         public Converter<ResponseBody, ?> responseBodyConverter(
                 Type type, Annotation[] annotations, Retrofit retrofit) {
-            if (type == JobPage.class) return new JobPageAdapter();
+            if (type == JobPage.class) return new QuebecJobPageAdapter();
             return null;
         }
     };

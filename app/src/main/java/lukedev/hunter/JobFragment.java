@@ -183,14 +183,7 @@ public class JobFragment extends Fragment {
                         HttpUrl jobURL = HttpUrl.parse(externalSiteLink);
                         Log.e("++++++++++++", "++++++++++++++++");
 
-//                            scrapeExternalJobHost(jobURL);
-                        if (jobURL.host().contains("workopolis")) {
                             scrapeExternalJobHost(jobURL);
-
-                        } else {
-                            mExternalContent.setText("Nevermind");
-                            Log.e("External Site Name: ", jobURL.host());
-                        }
 //
 //
                         Log.e("The job title is: ", mJob.getTitle());
@@ -368,6 +361,16 @@ public class JobFragment extends Fragment {
         jobBankHttpApi.requestExternalJob(url).enqueue(new Callback<JobPage>() {
             @Override
             public void onResponse(Call<JobPage> call, Response<JobPage> response) {
+
+                String breakpointHelper = null;
+                // A response can return successfully with no body
+                // There exist dead indexes on the job bank
+                if(response.code() != 404){
+                    if(response.body() != null) {
+                        breakpointHelper = null;
+                    }
+                }
+
             }
 
             @Override

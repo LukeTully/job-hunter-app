@@ -30,18 +30,24 @@ class ExternalJobPageAdapter implements Converter<ResponseBody, JobPage> {
 
     @Override
     public JobPage convert(ResponseBody responseBody) throws IOException {
+//
+//        Document document = Jsoup.parse(responseBody.string());
+//        Elements datePosted = document.select("h4:contains(Date Posted) ~ p");
+//        Elements externalSource = document.select("h4:contains(Source) ~ p");
+//        Elements availability = document.select("h4:contains(Anticipated Start Date) ~ p");
+//        Elements externalLink = document.select("p.notice ~ a");
+//// TODO: Select the right elements
+//        JobPage jobPage = new JobPage(externalLink.text());
+//        jobPage.setAvailability(availability.text());
+//        jobPage.setDatePosted(datePosted.text());
+//        jobPage.setExternalSource(externalSource.text());
 
-        Document document = Jsoup.parse(responseBody.string());
-        Elements datePosted = document.select("h4:contains(Date Posted) ~ p");
-        Elements externalSource = document.select("h4:contains(Source) ~ p");
-        Elements availability = document.select("h4:contains(Anticipated Start Date) ~ p");
-        Elements externalLink = document.select("p.notice ~ a");
-// TODO: Select the right elements
-        JobPage jobPage = new JobPage(externalLink.text());
-        jobPage.setAvailability(availability.text());
-        jobPage.setDatePosted(datePosted.text());
-        jobPage.setExternalSource(externalSource.text());
-
+        // TESTING
+        JobPage jobPage = new JobPage();
+        jobPage.setAvailability("bacon");
+        jobPage.setArticleContent("toast");
+        jobPage.setDatePosted("Anal");
+        jobPage.setExternalSiteLink("farts");
 
         return jobPage;
     }
